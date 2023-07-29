@@ -1,0 +1,23 @@
+{
+  "plugins": [
+    "css-modules"
+  ],
+  "extends": [
+    "airbnb",
+    "plugin:css-modules/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": "latest",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off"
+  }
+}
