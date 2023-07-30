@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import Input from '../../components/Input';
 
-export default function Home() {
+const Home = () => {
   const [titleText, setTitleText] = useState('');
   const [artistText, setArtistText] = useState('');
 
@@ -13,4 +13,6 @@ export default function Home() {
       <Input value={artistText} onChangeValue={(e) => setArtistText(e.target.value)} />
     </div>
   );
-}
+};
+
+export default Home;
