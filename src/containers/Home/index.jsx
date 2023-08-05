@@ -8,9 +8,19 @@ const Home = () => {
 
   return (
     <div>
-      <div>Home Container</div>
-      <Input value={titleText} onChangeValue={(e) => setTitleText(e.target.value)} />
-      <Input value={artistText} onChangeValue={(e) => setArtistText(e.target.value)} />
+      <div className="container">Home Container</div>
+      <Input
+        value={titleText}
+        onChangeValue={(e) => setTitleText(e.target.value)}
+        labelText="Title:"
+        backText="Mona Lisa"
+      />
+      <Input
+        value={artistText}
+        onChangeValue={(e) => setArtistText(e.target.value)}
+        labelText="Artist:"
+        backText="Leonardo da Vinci"
+      />
     </div>
   );
 };
