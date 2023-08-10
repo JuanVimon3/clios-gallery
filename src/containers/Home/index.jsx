@@ -2,25 +2,32 @@ import { useState } from 'react';
 
 import Input from '../../components/Input';
 
+import styles from './styles.module.css';
+
 const Home = () => {
   const [titleText, setTitleText] = useState('');
   const [artistText, setArtistText] = useState('');
 
   return (
     <div>
-      <div className="container">Home Container</div>
-      <Input
-        value={titleText}
-        onChangeValue={(e) => setTitleText(e.target.value)}
-        labelText="Title:"
-        backText="Mona Lisa"
-      />
-      <Input
-        value={artistText}
-        onChangeValue={(e) => setArtistText(e.target.value)}
-        labelText="Artist:"
-        backText="Leonardo da Vinci"
-      />
+      <div className={styles.filtersContainer}>
+        <div className={styles.inputContainer}>
+          <Input
+            value={titleText}
+            onChangeValue={(e) => setTitleText(e.target.value)}
+            labelText="Title:"
+            placeholder="Mona Lisa"
+          />
+        </div>
+        <div>
+          <Input
+            value={artistText}
+            onChangeValue={(e) => setArtistText(e.target.value)}
+            labelText="Artist:"
+            placeholder="Leonardo da Vinci"
+          />
+        </div>
+      </div>
     </div>
   );
 };
