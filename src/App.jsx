@@ -1,9 +1,7 @@
 import Home from './containers/Home';
 
-import styles from './App.module.css';
-
 const App = () => (
-  <div className={styles.app}>
+  <div>
     <Home />
   </div>
 );
