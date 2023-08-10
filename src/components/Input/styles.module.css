@@ -1,14 +1,15 @@
 .input {
   height: 30px;
+  width: auto;
   margin: 30px 30px;
-  border: 0;
-  border-bottom: 3px solid #dfdfdf;
+  padding: 5px;
+  font-size: medium;
 }
 label {
   position:absolute;
-  float:inline-start;
-}
-.input, label{
-  font-family: sans-serif;
+  bottom: 30px; left: 70px;
+  margin: 10px;
+  font-size: small;
+  font-family: sans-serif bold;
 }
 
