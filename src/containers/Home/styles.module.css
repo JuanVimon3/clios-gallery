@@ -1,8 +1,13 @@
-.inputContainer {
-  float: left;
-  margin-right: 20px;
-}
-
 .filtersContainer {
   margin-top: 100px;
+  text-align: center;
+}
+
+.filtersContainer > div {
+  display: inline-block;
+  width: 300px;
+}
+
+.inputContainer {
+  margin: auto 30px;
 }

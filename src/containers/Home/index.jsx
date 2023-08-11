@@ -19,7 +19,7 @@ const Home = () => {
             placeholder="Mona Lisa"
           />
         </div>
-        <div>
+        <div className={styles.inputContainer}>
           <Input
             value={artistText}
             onChangeValue={(e) => setArtistText(e.target.value)}
