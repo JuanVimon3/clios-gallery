@@ -3,10 +3,12 @@ import { useState } from 'react';
 import Input from '../../components/Input';
 
 import styles from './styles.module.css';
+import Dropdown from '../../components/Dropdown';
 
 const Home = () => {
   const [titleText, setTitleText] = useState('');
   const [artistText, setArtistText] = useState('');
+  const [artOption, setArtOption] = useState('');
 
   return (
     <div>
@@ -25,6 +27,14 @@ const Home = () => {
             onChangeValue={(e) => setArtistText(e.target.value)}
             labelText="Artist:"
             placeholder="Leonardo da Vinci"
+          />
+        </div>
+        <div className={styles.dropdownContainer}>
+          <Dropdown
+            value={artOption}
+            onChangeValue={(e) => setArtOption(e.target.value)}
+            labelText="Art-kind:"
+            placeholder="DropDown"
           />
         </div>
       </div>
