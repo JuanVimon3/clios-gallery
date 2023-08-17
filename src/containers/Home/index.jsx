@@ -33,8 +33,8 @@ const Home = () => {
           <Dropdown
             value={artOption}
             onChangeValue={(e) => setArtOption(e.target.value)}
-            labelText="Art-kind:"
-            placeholder="DropDown"
+            labelText="Choose the art type:"
+            placeholder="Art type"
           />
         </div>
       </div>

@@ -7,14 +7,8 @@ const Dropdown = ({ value, onChangeValue, labelText, placeholder }) => (
     <label htmlFor="dropdown" className={styles.label}>
       {labelText}
     </label>
-    <select
-      id="dropdown"
-      value={value}
-      type="text"
-      onChange={onChangeValue}
-      className={styles.dropdown}
-      placeholder={placeholder}
-    >
+    <select id="dropdown" value={value} type="text" onChange={onChangeValue} className={styles.dropdown}>
+      <option value="">{placeholder}</option>
       <option value="oil">Oil</option>
       <option value="sculpture">Sculpture</option>
     </select>
