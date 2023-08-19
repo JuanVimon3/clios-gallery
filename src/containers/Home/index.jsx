@@ -33,8 +33,12 @@ const Home = () => {
           <Dropdown
             value={artOption}
             onChangeValue={(e) => setArtOption(e.target.value)}
-            labelText="Choose the art type:"
-            placeholder="Art type"
+            labelText="Artkork type:"
+            placeholder="Painting"
+            options={[
+              { name: '0il', value: 'Oil' },
+              { name: 'Sculpture', value: 'Sculpture' },
+            ]}
           />
         </div>
       </div>
