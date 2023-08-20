@@ -8,7 +8,9 @@ const Dropdown = ({ onChangeValue, labelText, placeholder, options }) => (
       {labelText}
     </label>
     <select id="dropdown" type="text" onChange={onChangeValue} className={styles.dropdown}>
-      <option value="">{placeholder}</option>
+      <option value="" hidden>
+        {placeholder}
+      </option>
       {options.map((option) => (
         <option>{option.name}</option>
       ))}
