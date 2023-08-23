@@ -8,7 +8,7 @@ import Dropdown from '../../components/Dropdown';
 const Home = () => {
   const [titleText, setTitleText] = useState('');
   const [artistText, setArtistText] = useState('');
-  const [artOption, setArtOption] = useState('');
+  const [artworkTypeText, setArtworkTypeText] = useState('');
 
   return (
     <div>
@@ -31,12 +31,12 @@ const Home = () => {
         </div>
         <div className={styles.dropdownContainer}>
           <Dropdown
-            value={artOption}
-            onChangeValue={(e) => setArtOption(e.target.value)}
-            labelText="Artwork type:"
+            value={artworkTypeText}
+            onChangeValue={(e) => setArtworkTypeText(e.target.value)}
+            labelText="Artwork Type:"
             placeholder="Painting"
             options={[
-              { name: '0il', value: 'Oil' },
+              { name: 'Oil', value: 'Oil' },
               { name: 'Sculpture', value: 'Sculpture' },
             ]}
           />
