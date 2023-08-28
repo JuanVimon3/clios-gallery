@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import Input from '../../components/Input';
-
 import styles from './styles.module.css';
 import Dropdown from '../../components/Dropdown';
 
@@ -9,6 +8,8 @@ const Home = () => {
   const [titleText, setTitleText] = useState('');
   const [artistText, setArtistText] = useState('');
   const [artworkTypeText, setArtworkTypeText] = useState('');
+  const [sourceFromDate, setSourceFromDate] = useState('');
+  const [sourceToDate, setSourceToDate] = useState('');
 
   return (
     <div>
@@ -39,6 +40,40 @@ const Home = () => {
               { name: 'Oil', value: 'Oil' },
               { name: 'Sculpture', value: 'Sculpture' },
             ]}
+          />
+        </div>
+        <div className={styles.sourceFromDateContainer}>
+          <Input
+            value={sourceFromDate}
+            onChangeValue={(e) => setSourceFromDate(e.target.value)}
+            labelText="Source updated from:"
+            placeholder="07/17/2023"
+            type="text"
+            onFocus={(e) => {
+              e.target.type = 'date';
+            }}
+            onBlur={(e) => {
+              if (!sourceFromDate) {
+                e.target.type = 'text';
+              }
+            }}
+          />
+        </div>
+        <div className={styles.sourceToDateContainer}>
+          <Input
+            value={sourceToDate}
+            onChangeValue={(e) => setSourceToDate(e.target.value)}
+            labelText="Source updated to:"
+            placeholder="07/17/2023"
+            type="text"
+            onFocus={(e) => {
+              e.target.type = 'date';
+            }}
+            onBlur={(e) => {
+              if (!sourceToDate) {
+                e.target.type = 'text';
+              }
+            }}
           />
         </div>
       </div>
