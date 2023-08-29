@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import styles from './styles.module.css';
 
 const Input = ({ value, onChangeValue, labelText, placeholder, type, onFocus, onBlur }) => (
@@ -9,12 +10,12 @@ const Input = ({ value, onChangeValue, labelText, placeholder, type, onFocus, on
     <input
       id="input"
       value={value}
-      type={type}
       onChange={onChangeValue}
-      className={`${styles.input} ${value === '' ? styles.placeholderActive : ''}`}
       placeholder={placeholder}
+      type={type}
       onFocus={onFocus}
       onBlur={onBlur}
+      className={styles.input}
     />
   </div>
 );
