@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import Input from '../../components/Input';
-
 import Dropdown from '../../components/Dropdown';
 
 import styles from './styles.module.css';
