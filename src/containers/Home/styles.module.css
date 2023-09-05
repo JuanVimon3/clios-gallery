@@ -1,27 +1,13 @@
 .filtersContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   margin-top: 100px;
-  text-align: center;
-  text-align-last: left;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .filtersContainer > div {
   display: inline-block;
-  width: 300px;
-}
-
-.inputContainer {
-  margin: auto 30px;
-}
-
-.dropdownContainer{
-  margin: auto 30px
-}
-
-.sourceFromDateContainer{
-  margin: auto 30px;
-  margin-left: 135px;
-}
-
-.sourceToDateContainer{
-  margin: auto 30px
+  min-width: 360px;
 }

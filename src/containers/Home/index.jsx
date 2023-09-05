@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div>
       <div className={styles.filtersContainer}>
-        <div className={styles.inputContainer}>
+        <div>
           <Input
             value={titleText}
             onChangeValue={(e) => setTitleText(e.target.value)}
@@ -23,7 +23,7 @@ const Home = () => {
             placeholder="Mona Lisa"
           />
         </div>
-        <div className={styles.inputContainer}>
+        <div>
           <Input
             value={artistText}
             onChangeValue={(e) => setArtistText(e.target.value)}
@@ -31,7 +31,7 @@ const Home = () => {
             placeholder="Leonardo da Vinci"
           />
         </div>
-        <div className={styles.dropdownContainer}>
+        <div>
           <Dropdown
             value={artworkTypeText}
             onChangeValue={(e) => setArtworkTypeText(e.target.value)}
@@ -43,7 +43,7 @@ const Home = () => {
             ]}
           />
         </div>
-        <div className={styles.sourceFromDateContainer}>
+        <div>
           <Input
             value={sourceFromDate}
             onChangeValue={(e) => setSourceFromDate(e.target.value)}
@@ -60,7 +60,7 @@ const Home = () => {
             }}
           />
         </div>
-        <div className={styles.sourceToDateContainer}>
+        <div>
           <Input
             value={sourceToDate}
             onChangeValue={(e) => setSourceToDate(e.target.value)}
@@ -77,6 +77,7 @@ const Home = () => {
             }}
           />
         </div>
+        <div />
       </div>
     </div>
   );
