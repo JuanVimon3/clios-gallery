@@ -22,10 +22,10 @@ const Input = ({ value, onChangeValue, labelText, placeholder, type, onFocus, on
 
 Input.propTypes = {
   value: PropTypes.string.isRequired,
-  type: PropTypes.string,
   onChangeValue: PropTypes.func.isRequired,
   labelText: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
+  type: PropTypes.string,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
 };
