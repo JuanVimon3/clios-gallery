@@ -1,6 +1,7 @@
 .filtersContainer {
   margin-top: 100px;
   text-align: center;
+  text-align-last: left;
 }
 
 .filtersContainer > div {
@@ -13,5 +14,14 @@
 }
 
 .dropdownContainer{
+  margin: auto 30px
+}
+
+.sourceFromDateContainer{
+  margin: auto 30px;
+  margin-left: 135px;
+}
+
+.sourceToDateContainer{
   margin: auto 30px
 }
