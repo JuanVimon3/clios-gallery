@@ -1,9 +1,7 @@
 import { useState } from 'react';
 
 import Input from '../../components/Input';
-// import Header from '../../components/Header';
 import Dropdown from '../../components/Dropdown';
-import Menu from '../../components/Menu/menu';
 
 import styles from './styles.module.css';
 
@@ -13,16 +11,10 @@ const Home = () => {
   const [artworkTypeText, setArtworkTypeText] = useState('');
   const [sourceFromDate, setSourceFromDate] = useState('');
   const [sourceToDate, setSourceToDate] = useState('');
-  const [buttonText, setButtonText] = useState('');
 
   return (
     <div>
       <div className={styles.filtersContainer}>
-        <header className={styles.headerContainer}>Art Institute of Chicago</header>
-        <div className={styles.menuContainer}>
-          <Menu value={buttonText} onChangeValue={(e) => setButtonText(e.target.value)} button1="Home" />
-          <Menu value={buttonText} onChangeValue={(e) => setButtonText(e.target.value)} button2="About" />
-        </div>
         <div>
           <Input
             value={titleText}

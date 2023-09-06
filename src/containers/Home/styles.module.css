@@ -1,14 +1,8 @@
-
-.headerContainer{
-  align-items: center;
-  margin: auto 30px;
-}
-
 .filtersContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin-top: 100px;
+  margin-top: 40px;
   padding-left: 50px;
   padding-right: 50px;
 }
@@ -16,10 +10,4 @@
 .filtersContainer > div {
   display: inline-block;
   min-width: 360px;
-}
-
-.menuContainer{
-  position: fixed;
-  top: 30px;
-  left: 30px;
 }
