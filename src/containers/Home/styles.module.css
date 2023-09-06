@@ -1,3 +1,9 @@
+
+.headerContainer{
+  align-items: center;
+  margin: auto 30px;
+}
+
 .filtersContainer {
   display: flex;
   flex-wrap: wrap;
@@ -10,4 +16,10 @@
 .filtersContainer > div {
   display: inline-block;
   min-width: 360px;
+}
+
+.menuContainer{
+  position: fixed;
+  top: 30px;
+  left: 30px;
 }
