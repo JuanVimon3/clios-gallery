@@ -1,8 +1,8 @@
-// import styles from './styles.module.css';
+import styles from './styles.module.css';
 
 const Menu = () => (
-  <nav>
-    <ul>
+  <nav className={styles.nav}>
+    <ul className={styles.ul}>
       <li>Home</li>
       <li>About</li>
     </ul>
