@@ -1,9 +1,9 @@
-.container{
-  position: fixed;
+.container {
+  position: relative;
   bottom: 0;
   text-align: center;
   background-color: #80808091;
   width: 100%;
   font-size: 15px;
-  border: 1px solid
+  border: 1px solid;
 }
