@@ -80,7 +80,7 @@ const Home = () => {
           />
         </div>
         <div />
-        <div>
+        <div className={styles.cardsContainer}>
           {data.map(
             ({
               id,
@@ -95,21 +95,19 @@ const Home = () => {
               creditLine,
               sourceUpdatedAt,
             }) => (
-              <div className={styles.cardsContainer}>
-                <ArtWorkCard
-                  key={id}
-                  title={title}
-                  imageId={imageId}
-                  artistTitle={artistTitle}
-                  artistDisplay={artistDisplay}
-                  artworkTypeTitle={artworkTypeTitle}
-                  publicationHistory={publicationHistory}
-                  exhibitionHistory={exhibitionHistory}
-                  provenanceText={provenanceText}
-                  creditLine={creditLine}
-                  sourceUpdatedAt={sourceUpdatedAt}
-                />
-              </div>
+              <ArtWorkCard
+                key={id}
+                title={title}
+                imageId={imageId}
+                artistTitle={artistTitle}
+                artistDisplay={artistDisplay}
+                artworkTypeTitle={artworkTypeTitle}
+                publicationHistory={publicationHistory}
+                exhibitionHistory={exhibitionHistory}
+                provenanceText={provenanceText}
+                creditLine={creditLine}
+                sourceUpdatedAt={sourceUpdatedAt}
+              />
             ),
           )}
         </div>
