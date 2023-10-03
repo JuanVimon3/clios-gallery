@@ -80,37 +80,37 @@ const Home = () => {
           />
         </div>
         <div />
-        <div className={styles.cardsContainer}>
-          {data.map(
-            ({
-              id,
-              title,
-              imageId,
-              artistTitle,
-              artistDisplay,
-              artworkTypeTitle,
-              publicationHistory,
-              exhibitionHistory,
-              provenanceText,
-              creditLine,
-              sourceUpdatedAt,
-            }) => (
-              <ArtWorkCard
-                key={id}
-                title={title}
-                imageId={imageId}
-                artistTitle={artistTitle}
-                artistDisplay={artistDisplay}
-                artworkTypeTitle={artworkTypeTitle}
-                publicationHistory={publicationHistory}
-                exhibitionHistory={exhibitionHistory}
-                provenanceText={provenanceText}
-                creditLine={creditLine}
-                sourceUpdatedAt={sourceUpdatedAt}
-              />
-            ),
-          )}
-        </div>
+      </div>
+      <div className={styles.cardsContainer}>
+        {data.map(
+          ({
+            id,
+            title,
+            imageId,
+            artistTitle,
+            artistDisplay,
+            artworkTypeTitle,
+            publicationHistory,
+            exhibitionHistory,
+            provenanceText,
+            creditLine,
+            sourceUpdatedAt,
+          }) => (
+            <ArtWorkCard
+              key={id}
+              title={title}
+              imageId={imageId}
+              artistTitle={artistTitle}
+              artistDisplay={artistDisplay}
+              artworkTypeTitle={artworkTypeTitle}
+              publicationHistory={publicationHistory}
+              exhibitionHistory={exhibitionHistory}
+              provenanceText={provenanceText}
+              creditLine={creditLine}
+              sourceUpdatedAt={sourceUpdatedAt}
+            />
+          ),
+        )}
       </div>
       <div className={styles.cardsContainer}>
         {data.map(
