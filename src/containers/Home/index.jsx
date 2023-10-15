@@ -14,6 +14,34 @@ const Home = () => {
   const [sourceFromDate, setSourceFromDate] = useState('');
   const [sourceToDate, setSourceToDate] = useState('');
 
+  const filteredData = data.filter(({ title, artistTitle, artworkTypeTitle, artistDisplay, sourceUpdatedAt }) => {
+    if (titleText && !title.toLowerCase().includes(titleText.toLowerCase())) {
+      return false;
+    }
+    if (artistText && !artistTitle.toLowerCase().includes(artistText.toLowerCase())) {
+      return false;
+    }
+    if (artworkTypeText && artworkTypeText !== (artworkTypeTitle || artistDisplay)) {
+      return false;
+    }
+    if (sourceFromDate && sourceFromDate > sourceUpdatedAt) {
+      return false;
+    }
+    if (sourceToDate && sourceToDate < sourceUpdatedAt) {
+      return false;
+    }
+
+    return true;
+  });
+
+  const artWorkTypeOptions = data.reduce((acc, { artworkTypeTitle }) => {
+    const doesElementExist = acc.find(({ value }) => value === artworkTypeTitle);
+    if (doesElementExist) {
+      return acc;
+    }
+    return [...acc, { value: artworkTypeTitle, name: artworkTypeTitle }];
+  }, []);
+
   return (
     <div>
       <div className={styles.filtersContainer}>
@@ -39,10 +67,7 @@ const Home = () => {
             onChangeValue={(e) => setArtworkTypeText(e.target.value)}
             labelText="Artwork Type:"
             placeholder="Painting"
-            options={[
-              { name: 'Oil', value: 'Oil' },
-              { name: 'Sculpture', value: 'Sculpture' },
-            ]}
+            options={artWorkTypeOptions}
           />
         </div>
         <div>
@@ -82,7 +107,7 @@ const Home = () => {
         <div />
       </div>
       <div className={styles.cardsContainer}>
-        {data.map(
+        {filteredData.map(
           ({
             id,
             title,
