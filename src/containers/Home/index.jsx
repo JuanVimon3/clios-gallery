@@ -14,14 +14,15 @@ const Home = () => {
   const [sourceFromDate, setSourceFromDate] = useState('');
   const [sourceToDate, setSourceToDate] = useState('');
 
-  const filteredData = data.filter(({ title, artistTitle, artworkTypeTitle, artistDisplay, sourceUpdatedAt }) => {
+  const filteredData = data.filter(({ title, artistTitle, artistDisplay, artworkTypeTitle, sourceUpdatedAt }) => {
     if (titleText && !title.toLowerCase().includes(titleText.toLowerCase())) {
       return false;
     }
-    if (artistText && !artistTitle.toLowerCase().includes(artistText.toLowerCase())) {
+    const artistTitleShown = artistTitle || artistDisplay;
+    if (artistText && !artistTitleShown.toLowerCase().includes(artistText.toLowerCase())) {
       return false;
     }
-    if (artworkTypeText && artworkTypeText !== (artworkTypeTitle || artistDisplay)) {
+    if (artworkTypeText && artworkTypeText !== artworkTypeTitle) {
       return false;
     }
     if (sourceFromDate && sourceFromDate > sourceUpdatedAt) {
@@ -34,13 +35,16 @@ const Home = () => {
     return true;
   });
 
-  const artWorkTypeOptions = data.reduce((acc, { artworkTypeTitle }) => {
-    const doesElementExist = acc.find(({ value }) => value === artworkTypeTitle);
-    if (doesElementExist) {
-      return acc;
-    }
-    return [...acc, { value: artworkTypeTitle, name: artworkTypeTitle }];
-  }, []);
+  const artWorkTypeOptions = data.reduce(
+    (acc, { artworkTypeTitle }) => {
+      const doesElementExist = acc.find(({ value }) => value === artworkTypeTitle);
+      if (doesElementExist) {
+        return acc;
+      }
+      return [...acc, { value: artworkTypeTitle, name: artworkTypeTitle }];
+    },
+    [{ value: '', name: 'All' }],
+  );
 
   return (
     <div>
@@ -122,38 +126,6 @@ const Home = () => {
             sourceUpdatedAt,
           }) => (
             <ArtWorkCard
-              key={id}
-              title={title}
-              imageId={imageId}
-              artistTitle={artistTitle}
-              artistDisplay={artistDisplay}
-              artworkTypeTitle={artworkTypeTitle}
-              publicationHistory={publicationHistory}
-              exhibitionHistory={exhibitionHistory}
-              provenanceText={provenanceText}
-              creditLine={creditLine}
-              sourceUpdatedAt={sourceUpdatedAt}
-            />
-          ),
-        )}
-      </div>
-      <div className={styles.cardsContainer}>
-        {data.map(
-          ({
-            id,
-            title,
-            imageId,
-            artistTitle,
-            artistDisplay,
-            artworkTypeTitle,
-            publicationHistory,
-            exhibitionHistory,
-            provenanceText,
-            creditLine,
-            sourceUpdatedAt,
-          }) => (
-            <ArtWorkCard
-              id={id}
               key={id}
               title={title}
               imageId={imageId}
