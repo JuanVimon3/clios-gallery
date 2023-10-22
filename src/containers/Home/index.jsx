@@ -14,6 +14,38 @@ const Home = () => {
   const [sourceFromDate, setSourceFromDate] = useState('');
   const [sourceToDate, setSourceToDate] = useState('');
 
+  const filteredData = data.filter(({ title, artistTitle, artistDisplay, artworkTypeTitle }) => {
+    if (titleText && !title.toLowerCase().includes(titleText.toLowerCase())) {
+      return false;
+    }
+    const artistTitleShown = artistTitle || artistDisplay;
+    if (artistText && !artistTitleShown.toLowerCase().includes(artistText.toLowerCase())) {
+      return false;
+    }
+    if (artworkTypeText && artworkTypeText !== artworkTypeTitle) {
+      return false;
+    }
+    // if (sourceFromDate && sourceFromDate > sourceUpdatedAt) {
+    //   return false;
+    // }
+    // if (sourceToDate && sourceToDate < sourceUpdatedAt) {
+    //   return false;
+    // }
+
+    return true;
+  });
+
+  const artWorkTypeOptions = data.reduce(
+    (acc, { artworkTypeTitle }) => {
+      const doesElementExist = acc.find(({ value }) => value === artworkTypeTitle);
+      if (doesElementExist) {
+        return acc;
+      }
+      return [...acc, { value: artworkTypeTitle, name: artworkTypeTitle }];
+    },
+    [{ value: '', name: 'All' }],
+  );
+
   return (
     <div>
       <div className={styles.filtersContainer}>
@@ -39,10 +71,7 @@ const Home = () => {
             onChangeValue={(e) => setArtworkTypeText(e.target.value)}
             labelText="Artwork Type:"
             placeholder="Painting"
-            options={[
-              { name: 'Oil', value: 'Oil' },
-              { name: 'Sculpture', value: 'Sculpture' },
-            ]}
+            options={artWorkTypeOptions}
           />
         </div>
         <div>
@@ -82,7 +111,7 @@ const Home = () => {
         <div />
       </div>
       <div className={styles.cardsContainer}>
-        {data.map(
+        {filteredData.map(
           ({
             id,
             title,
@@ -97,7 +126,6 @@ const Home = () => {
             sourceUpdatedAt,
           }) => (
             <ArtWorkCard
-              id={id}
               key={id}
               title={title}
               imageId={imageId}

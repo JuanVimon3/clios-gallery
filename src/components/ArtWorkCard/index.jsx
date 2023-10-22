@@ -21,7 +21,7 @@ const ArtWorkCard = ({
       <h5 className={styles.artist}>Artist: {artistTitle || artistDisplay}</h5>
       <h5 className={styles.artworkTypeTitle}>Type: {artworkTypeTitle}</h5>
     </div>
-    <img className={styles.image} src={`https://www.artic.edu/iiif/2/${imageId}/full/400,/0/default.jpg`} alt={title} />
+    <img className={styles.image} src={`https://www.artic.edu/iiif/2/${imageId}/full/300,/0/default.jpg`} alt={title} />
     <p className={styles.publicationHistory}>
       {publicationHistory || exhibitionHistory || provenanceText || creditLine}
     </p>
@@ -36,7 +36,7 @@ ArtWorkCard.propTypes = {
   title: PropTypes.string,
   imageId: PropTypes.string.isRequired,
   artistTitle: PropTypes.string,
-  artistDisplay: PropTypes.string.isRequired,
+  artistDisplay: PropTypes.string,
   artworkTypeTitle: PropTypes.string,
   publicationHistory: PropTypes.string,
   exhibitionHistory: PropTypes.string,
@@ -49,6 +49,7 @@ ArtWorkCard.defaultProps = {
   title: null,
   artistTitle: null,
   artworkTypeTitle: null,
+  artistDisplay: null,
   publicationHistory: null,
   exhibitionHistory: null,
   provenanceText: null,
