@@ -30,8 +30,9 @@ const Home = () => {
     }
     if (sourceToDate) {
       const endDate = new Date(sourceToDate);
-      endDate.setDate(endDate.getDate() + 1);
+      endDate.setDate(endDate.getDate() + 1); // y si resto o elimino este +1
       if (new Date(sourceUpdatedAt) > endDate) {
+        // y aquí uso <
         return false;
       }
     }
