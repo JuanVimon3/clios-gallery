@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Header from './components/Header';
 import Home from './containers/Home';
+import About from './containers/About';
 import ArtWorkDetail, { loader as artWorkLoader } from './containers/ArtWorkDetail';
 import Footer from './components/Footer';
 
@@ -15,6 +16,10 @@ const router = createBrowserRouter(
       path: '/art-works/:artWorkId',
       element: <ArtWorkDetail />,
       loader: artWorkLoader,
+    },
+    {
+      path: '/about/',
+      element: <About />,
     },
   ],
   {
