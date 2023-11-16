@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { Link } from 'react-router-dom';
 import Input from '../../components/Input';
 import Dropdown from '../../components/Dropdown';
 import ArtWorkCard from '../../components/ArtWorkCard';
@@ -129,19 +130,20 @@ const Home = () => {
             creditLine,
             sourceUpdatedAt,
           }) => (
-            <ArtWorkCard
-              key={id}
-              title={title}
-              imageId={imageId}
-              artistTitle={artistTitle}
-              artistDisplay={artistDisplay}
-              artworkTypeTitle={artworkTypeTitle}
-              publicationHistory={publicationHistory}
-              exhibitionHistory={exhibitionHistory}
-              provenanceText={provenanceText}
-              creditLine={creditLine}
-              sourceUpdatedAt={sourceUpdatedAt}
-            />
+            <Link to={`/art-works/${id}`} key={id}>
+              <ArtWorkCard
+                title={title}
+                imageId={imageId}
+                artistTitle={artistTitle}
+                artistDisplay={artistDisplay}
+                artworkTypeTitle={artworkTypeTitle}
+                publicationHistory={publicationHistory}
+                exhibitionHistory={exhibitionHistory}
+                provenanceText={provenanceText}
+                creditLine={creditLine}
+                sourceUpdatedAt={sourceUpdatedAt}
+              />
+            </Link>
           ),
         )}
       </div>

@@ -3,6 +3,7 @@
 }
 
 .nav li {
+  cursor: pointer;
   list-style-type: none;
   width: 80px;
   color: white;
