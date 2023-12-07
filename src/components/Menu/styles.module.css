@@ -19,3 +19,7 @@
   padding-left: 15px;
   margin-top: 15px;
 }
+
+.nav a {
+  text-decoration: none;
+}
