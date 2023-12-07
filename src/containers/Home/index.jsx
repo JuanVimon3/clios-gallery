@@ -135,8 +135,8 @@ const Home = () => {
                 title={title}
                 imageId={imageId}
                 artistTitle={artistTitle}
-                artistDisplay={artistDisplay}
                 artworkTypeTitle={artworkTypeTitle}
+                artistDisplay={artistDisplay}
                 publicationHistory={publicationHistory}
                 exhibitionHistory={exhibitionHistory}
                 provenanceText={provenanceText}
