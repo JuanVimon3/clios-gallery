@@ -1,6 +1,10 @@
 .similarContainer{
-  max-width: 40%;
-  max-height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 300px;
+  max-height: 1000px;
 }
 
 .similarImage{
@@ -12,15 +16,15 @@
   width: auto;
   display: block;
   margin: 20px auto;
-  
 }
 
 .similarTitle{
-  font-size: 16px;
-  color: #535050;
-  font-weight: 400;
-  margin-left: 20px;
-  margin-bottom: 5px;
-  text-align: left;
-  line-height: 17.5px;
+  max-width: 250px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  padding: 10px;
+  color: #004E63;
+  text-overflow: ellipsis;
+  white-space: wrap;
 }
+

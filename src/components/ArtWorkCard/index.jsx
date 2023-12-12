@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import styles from './styles.module.css';
 
@@ -16,18 +17,24 @@ const ArtWorkCard = ({
   sourceUpdatedAt,
 }) => (
   <div className={styles.container} key={id}>
-    <div className={styles.headingInfo}>
-      <h5 className={styles.title}>{title}</h5>
-      <h5 className={styles.artist}>Artist: {artistTitle || artistDisplay}</h5>
-      <h5 className={styles.artworkTypeTitle}>Type: {artworkTypeTitle}</h5>
-    </div>
-    <img className={styles.image} src={`https://www.artic.edu/iiif/2/${imageId}/full/300,/0/default.jpg`} alt={title} />
-    <p className={styles.publicationHistory}>
-      {publicationHistory || exhibitionHistory || provenanceText || creditLine}
-    </p>
-    <p className={styles.source}>
-      <i>Source updated at: {new Date(sourceUpdatedAt).toLocaleDateString()}</i>
-    </p>
+    <Link to={`/art-works/${id}`} key={id}>
+      <div className={styles.headingInfo}>
+        <h5 className={styles.title}>{title}</h5>
+        <h5 className={styles.artist}>Artist: {artistTitle || artistDisplay}</h5>
+        <h5 className={styles.artworkTypeTitle}>Type: {artworkTypeTitle}</h5>
+      </div>
+      <img
+        className={styles.image}
+        src={`https://www.artic.edu/iiif/2/${imageId}/full/300,/0/default.jpg`}
+        alt={title}
+      />
+      <p className={styles.publicationHistory}>
+        {publicationHistory || exhibitionHistory || provenanceText || creditLine}
+      </p>
+      <p className={styles.source}>
+        <i>Source updated at: {new Date(sourceUpdatedAt).toLocaleDateString()}</i>
+      </p>
+    </Link>
   </div>
 );
 

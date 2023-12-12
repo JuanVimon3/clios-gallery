@@ -8,9 +8,8 @@ const SimilarArtwork = ({ id, title, imageId, artworkTypeTitle, artistTitle }) =
       src={`https://www.artic.edu/iiif/2/${imageId}/full/300,/0/default.jpg`}
       alt={title}
     />
-    <h6 className={styles.similarTitle}>{title}</h6>
-    <h6>
-      {artworkTypeTitle} || {artistTitle}
+    <h6 className={styles.similarTitle}>
+      {title} || {artworkTypeTitle} || {artistTitle}
     </h6>
   </div>
 );
