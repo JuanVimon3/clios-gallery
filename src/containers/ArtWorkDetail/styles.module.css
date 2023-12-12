@@ -28,9 +28,11 @@
 }
 
 .similarContainer{
-  position: absolute;
-  right: 40px;
-  top: 150px;
-  max-width:  30px;
-  max-height: 70px;
+  position: relative;
+  left: 920px;
+  bottom: 650px;
+}
+
+.similarContainer a {
+  text-decoration: none;
 }

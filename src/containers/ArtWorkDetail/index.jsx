@@ -17,7 +17,7 @@ const ArtWorkDetail = () => {
     .slice(0, 3);
   return (
     <>
-      <div>
+      <div className={styles.mainContainer}>
         <div className={styles.title}>{artWork.title}</div>
         <img
           className={styles.image}
@@ -35,14 +35,15 @@ const ArtWorkDetail = () => {
         </div>
       </div>
       <div className={styles.similarContainer}>
+        {console.log(similarArtWorks)}
         {similarArtWorks.map(({ id, title, imageId, artworkTypeTitle, artistTitle }) => (
           <Link to={`/art-works/${id}`} key={id}>
-            <SimilarArtwork>
+            <SimilarArtwork
               title={title}
               imageId={imageId}
               artistTitle={artistTitle}
               artworkTypeTitle={artworkTypeTitle}
-            </SimilarArtwork>
+            />
           </Link>
         ))}
       </div>
