@@ -5,17 +5,22 @@ import Home from './containers/Home';
 import ArtWorkDetail, { loader as artWorkLoader } from './containers/ArtWorkDetail';
 import Footer from './components/Footer';
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Home />,
+    },
+    {
+      path: '/art-works/:artWorkId',
+      element: <ArtWorkDetail />,
+      loader: artWorkLoader,
+    },
+  ],
   {
-    path: '/',
-    element: <Home />,
+    basename: '/clios-gallery',
   },
-  {
-    path: '/art-works/:artWorkId',
-    element: <ArtWorkDetail />,
-    loader: artWorkLoader,
-  },
-]);
+);
 
 const App = () => (
   <div>
