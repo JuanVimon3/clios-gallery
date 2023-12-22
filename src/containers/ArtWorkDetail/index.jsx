@@ -1,9 +1,9 @@
 import { useLoaderData, Link } from 'react-router-dom';
 
 import data from '../../data.json';
+import SimilarArtwork from './Similar/SimilarArtWork';
 
 import styles from './styles.module.css';
-import SimilarArtwork from './Similar/SimilarArtWork';
 
 export const loader = ({ params }) => {
   const artWork = data.find(({ id }) => id === parseInt(params.artWorkId, 10));
@@ -17,11 +17,11 @@ const ArtWorkDetail = () => {
     .slice(0, 3);
   return (
     <>
-      <div className={styles.mainContainer}>
+      <div>
         <div className={styles.title}>{artWork.title}</div>
         <img
           className={styles.image}
-          src={`https://www.artic.edu/iiif/2/${artWork.imageId}/full/843,/0/default.jpg`}
+          src={`https://www.artic.edu/iiif/2/${artWork.imageId}/full/1686,/0/default.jpg`}
           alt={artWork.title}
         />
         <div className={styles.text}>
@@ -35,7 +35,6 @@ const ArtWorkDetail = () => {
         </div>
       </div>
       <div className={styles.similarContainer}>
-        {console.log(similarArtWorks)}
         {similarArtWorks.map(({ id, title, imageId, artworkTypeTitle, artistTitle }) => (
           <Link to={`/art-works/${id}`} key={id}>
             <SimilarArtwork
