@@ -1,5 +1,4 @@
-
-.title{
+.title {
   size: 40px;
   margin-top: 20px;
   margin-left: 40px;
@@ -12,7 +11,7 @@
   font-weight: bold;
 }
 
-.image{
+.image {
   top: auto;
   margin-left: 60px;
   height: auto;
@@ -21,13 +20,13 @@
   max-width: 800px;
 }
 
-.text{
+.text {
   max-width: 50%;
   margin-bottom: 40px;
   margin-left: 60px;
 }
 
-.similarContainer{
+.similarContainer {
   position: relative;
   left: 920px;
   bottom: 650px;
