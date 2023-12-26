@@ -1,7 +1,7 @@
-import { useLoaderData, Link } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 
+import ArtWorkCard from '../../components/ArtWorkCard';
 import data from '../../data.json';
-import SimilarArtwork from './Similar/SimilarArtWork';
 
 import styles from './styles.module.css';
 
@@ -35,16 +35,36 @@ const ArtWorkDetail = () => {
         </div>
       </div>
       <div className={styles.similarContainer}>
-        {similarArtWorks.map(({ id, title, imageId, artworkTypeTitle, artistTitle }) => (
-          <Link to={`/art-works/${id}`} key={id}>
-            <SimilarArtwork
+        {similarArtWorks.map(
+          ({
+            id,
+            title,
+            imageId,
+            artistTitle,
+            artistDisplay,
+            artworkTypeTitle,
+            publicationHistory,
+            exhibitionHistory,
+            provenanceText,
+            creditLine,
+            sourceUpdatedAt,
+          }) => (
+            <ArtWorkCard
+              key={id}
+              id={id}
               title={title}
               imageId={imageId}
               artistTitle={artistTitle}
               artworkTypeTitle={artworkTypeTitle}
+              artistDisplay={artistDisplay}
+              publicationHistory={publicationHistory}
+              exhibitionHistory={exhibitionHistory}
+              provenanceText={provenanceText}
+              creditLine={creditLine}
+              sourceUpdatedAt={sourceUpdatedAt}
             />
-          </Link>
-        ))}
+          ),
+        )}
       </div>
     </>
   );
