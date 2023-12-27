@@ -18,23 +18,28 @@ const ArtWorkDetail = () => {
   return (
     <>
       <div>
-        <div className={styles.title}>{artWork.title}</div>
+        <div className={styles.title}>
+          <h1>{artWork.title}</h1>
+        </div>
         <img
           className={styles.image}
           src={`https://www.artic.edu/iiif/2/${artWork.imageId}/full/1686,/0/default.jpg`}
           alt={artWork.title}
         />
         <div className={styles.text}>
-          <div>Artist: {artWork.artistTitle}</div>
-          <div>Type: {artWork.artworkTypeTitle}</div>
-          <div>
-            Pubication History: {artWork.publicationHistory || artWork.exhibitionHistory || artWork.provenanceText}
-          </div>
-          <div>Credit Line: {artWork.creditLine}</div>
-          <div>Source Updated At: {artWork.sourceUpdatedAt}</div>
+          <h3>
+            <div>Artist: {artWork.artistTitle}</div>
+            <div>Type: {artWork.artworkTypeTitle}</div>
+            <div>
+              Pubication History: {artWork.publicationHistory || artWork.exhibitionHistory || artWork.provenanceText}
+            </div>
+            <div>Credit Line: {artWork.creditLine}</div>
+            <div>Source Updated At: {artWork.sourceUpdatedAt}</div>
+          </h3>
         </div>
       </div>
       <div className={styles.similarContainer}>
+        <h4 className={styles.subtitles}>Other ArtWorks of {artWork.artworkTypeTitle}</h4>
         {similarArtWorks.map(
           ({
             id,
