@@ -1,5 +1,4 @@
 .title {
-  size: 40px;
   margin-top: 20px;
   margin-left: 40px;
   max-width: 35%;
@@ -12,20 +11,22 @@
 }
 
 .image {
-  top: auto;
-  margin-left: 60px;
   height: auto;
   width: auto;
   max-height: 500px;
   max-width: 800px;
   display: block;
-  margin: 50px auto;
+  margin: 30px auto;
 }
 
 .text {
   max-width: 50%;
   margin-bottom: 40px;
   margin-left: 60px;
+}
+
+.text, h3 > div {
+  margin-bottom: 10px;
 }
 
 .similarContainer {
@@ -40,3 +41,9 @@
 .similarContainer a {
   text-decoration: none;
 }
+
+.subtitles {
+  color: #004E63;
+  font-weight: bold;
+}
+
