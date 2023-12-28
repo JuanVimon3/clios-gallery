@@ -30,16 +30,16 @@ const ArtWorkDetail = () => {
           <h3>
             <div>Artist: {artWork.artistTitle}</div>
             <div>Type: {artWork.artworkTypeTitle}</div>
-            <div>
-              Pubication History: {artWork.publicationHistory || artWork.exhibitionHistory || artWork.provenanceText}
-            </div>
+            <div>{artWork.publicationHistory || artWork.exhibitionHistory || artWork.provenanceText}</div>
             <div>Credit Line: {artWork.creditLine}</div>
-            <div>Source Updated At: {artWork.sourceUpdatedAt}</div>
+            <div>Source Updated At: {new Date(artWork.sourceUpdatedAt).toLocaleDateString()}</div>
           </h3>
         </div>
       </div>
+      <div className={styles.subtitles}>
+        <h4>Other ArtWorks of {artWork.artworkTypeTitle}</h4>
+      </div>
       <div className={styles.similarContainer}>
-        <h4 className={styles.subtitles}>Other ArtWorks of {artWork.artworkTypeTitle}</h4>
         {similarArtWorks.map(
           ({
             id,
