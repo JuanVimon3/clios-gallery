@@ -1,0 +1,15 @@
+.returnButton{
+  cursor: pointer;
+  list-style-type: none;
+  width: 80px;
+  color: white;
+  background-color: #3a77d7;
+  border-radius: 2px;
+  margin-right: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+a{
+  text-decoration: none;
+}

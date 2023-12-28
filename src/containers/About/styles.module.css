@@ -3,5 +3,19 @@
 }
 
 .title{
-  color: #004E63,
+  margin: 30px;
+}
+
+.profileImage{
+  display: block;
+  display: block;
+  margin: 70px auto;
+}
+
+.text{
+  margin-left: 30px;
+  margin-right: 30px;
+  position: relative;
+  bottom: unset;
+  margin-top: auto;
 }

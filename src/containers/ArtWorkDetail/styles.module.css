@@ -32,7 +32,7 @@
 .similarContainer {
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-left: 90px;
   margin-right: 90px;
   margin-bottom: 90px;
@@ -43,6 +43,8 @@
 }
 
 .subtitles {
+  margin-top: 60px;
+  margin-left: 90px;
   color: #004E63;
   font-weight: bold;
 }
