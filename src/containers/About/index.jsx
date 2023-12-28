@@ -9,9 +9,9 @@ const About = () => (
     />
     <h1 className={styles.title}> !Hello! </h1>
     <h2 className={styles.text}>
-      Dedicated and enthusiastic Developer Trainee with a passion for technology and a strong foundation in web
-      development. I am eager to contribute my skills to a project and learn continuously in a dynamic software
-      development environment. As a historian with a degree from the University of Antioquia, I bring a unique
+      My name is Juan, and Im a dedicated and enthusiastic Developer Trainee with a passion for technology and a strong
+      foundation in web development. I am eager to contribute my skills to a project and learn continuously in a dynamic
+      software development environment. As a historian with a degree from the University of Antioquia, I bring a unique
       perspective and a strong foundation in research and critical thinking to the world of technology. <br /> My recent
       completion of the `Training Program in Programming Skills with Emphasis on Web Applications` has equipped me with
       essential web development skills, including HTML, CSS, JavaScript, React, and more. I am a highly motivated

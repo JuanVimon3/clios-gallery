@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './containers/Home';
 import About from './containers/About';
 import ArtWorkDetail, { loader as artWorkLoader } from './containers/ArtWorkDetail';
+import NotFound from './containers/NotFound';
 import Layout from './components/Layout';
 
 const router = createBrowserRouter(
@@ -29,6 +30,14 @@ const router = createBrowserRouter(
       element: (
         <Layout>
           <About />
+        </Layout>
+      ),
+    },
+    {
+      path: '*',
+      element: (
+        <Layout>
+          <NotFound />
         </Layout>
       ),
     },
