@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, ScrollRestoration } from 'react-router-dom';
 
 import Home from './containers/Home';
 import About from './containers/About';
@@ -20,7 +20,10 @@ const router = createBrowserRouter(
       path: '/art-works/:artWorkId',
       element: (
         <Layout>
-          <ArtWorkDetail />
+          <div>
+            <ScrollRestoration />
+            <ArtWorkDetail />
+          </div>
         </Layout>
       ),
       loader: artWorkLoader,

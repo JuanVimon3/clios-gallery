@@ -1,22 +1,7 @@
-.returnButton{
+.content{
   display: block;
-  cursor: pointer;
-  list-style-type: none;
-  width: 80px;
-  color: white;
-  background-color: #3a77d7;
-  border-radius: 2px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-}
-
-.returnContent{
-  display: block;
-  margin: 80px;
+  margin-top: 100px;
   margin-left: 35%;
+  margin-bottom: 310px;
 }
 
-a{
-  text-decoration: none;
-}

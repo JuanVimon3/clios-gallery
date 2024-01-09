@@ -1,19 +1,20 @@
-.container{
+.container {
   color: #004E63,
 }
 
-.title{
+.title {
   margin: 30px;
   margin-bottom: 50px;
 }
 
-.profileImage{
-  display: block;
+.profileImage {
   display: block;
   margin: 70px auto;
+  width: 350px;
+  height: 500px;
 }
 
-.text{
+.text {
   top: 10px;
   margin-left: 30px;
   margin-right: 30px;

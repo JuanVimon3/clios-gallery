@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router-dom';
+import { redirect, useLoaderData } from 'react-router-dom';
 
 import ArtWorkCard from '../../components/ArtWorkCard';
 import data from '../../data.json';
@@ -7,6 +7,9 @@ import styles from './styles.module.css';
 
 export const loader = ({ params }) => {
   const artWork = data.find(({ id }) => id === parseInt(params.artWorkId, 10));
+  if (!artWork) {
+    return redirect('*');
+  }
   return { artWork };
 };
 

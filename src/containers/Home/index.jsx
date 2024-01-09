@@ -30,9 +30,8 @@ const Home = () => {
     }
     if (sourceToDate) {
       const endDate = new Date(sourceToDate);
-      endDate.setDate(endDate.getDate() + 1); // y si resto o elimino este +1
+      endDate.setHours(23, 59, 59, 999);
       if (new Date(sourceUpdatedAt) > endDate) {
-        // y aquí uso <
         return false;
       }
     }

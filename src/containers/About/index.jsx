@@ -2,11 +2,7 @@ import styles from './styles.module.css';
 
 const About = () => (
   <div className={styles.container}>
-    <img
-      className={styles.profileImage}
-      src="https://media.licdn.com/dms/image/D4E35AQE8hlP7swrzYQ/profile-framedphoto-shrink_200_200/0/1698155404165?e=1704380400&v=beta&t=NwcYQJY7NR9Om0FkE0SyZlCwQVkqPXEsAqDOuFn2FkY"
-      alt="profile"
-    />
+    <img className={styles.profileImage} src="/Profile_image.jpeg" alt="profile" />
     <h1 className={styles.title}> !Hello! </h1>
     <h2 className={styles.text}>
       My name is Juan, and Im a dedicated and enthusiastic Developer Trainee with a passion for technology and a strong
@@ -17,7 +13,9 @@ const About = () => (
       essential web development skills, including HTML, CSS, JavaScript, React, and more. I am a highly motivated
       individual with a genuine fascination for the ever-evolving world of technology. <br /> I really want to continue
       learning and growing in this field, and I am excited to leverage my existing skills and knowledge while constantly
-      expanding my horizons as a Software Developer.
+      expanding my horizons as a Software Developer. <br /> <br /> Note: This is a personal and self-training project in
+      web development that uses a free API from the Art Institute of Chicago available at:{' '}
+      <a href="https://api.artic.edu/docs/">https://api.artic.edu/docs/</a>.
     </h2>
   </div>
 );

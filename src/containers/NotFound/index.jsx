@@ -1,13 +1,11 @@
-import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
 
 const NotFound = () => (
-  <div className={styles.returnContent}>
-    <h1>404- NotFound. This is not a valid address</h1>
-    <p>Please go to the main page here:</p>
-    <Link to="/" className={styles.returnButton}>
-      Home
-    </Link>
+  <div className={styles.content}>
+    <h1>
+      Page not found <br />
+    </h1>
+    <p>{`Oops! We couldn't find the page that you're looking for`}</p>
   </div>
 );
 

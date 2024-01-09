@@ -1,7 +1,6 @@
 .title {
   margin-top: 20px;
   margin-left: 40px;
-  max-width: 35%;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
@@ -20,9 +19,10 @@
 }
 
 .text {
-  max-width: 50%;
+  max-width: 100%;
   margin-bottom: 40px;
   margin-left: 60px;
+  margin-right: 60px;
 }
 
 .text, h3 > div {
@@ -48,4 +48,3 @@
   color: #004E63;
   font-weight: bold;
 }
-
