@@ -3,6 +3,7 @@
 }
 
 .nav li {
+  cursor: pointer;
   list-style-type: none;
   width: 80px;
   color: white;
@@ -15,6 +16,8 @@
 
 .ul {
   display: flex;
-  padding-left: 15px;
-  margin-top: 15px;
+}
+
+.nav a {
+  text-decoration: none;
 }

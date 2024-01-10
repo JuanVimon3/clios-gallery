@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const Header = () => (
   <header className={styles.container}>
     <Menu />
-    <h3>Art Institute of Chicago</h3>
+    <h3>{`Clio's Gallery`}</h3>
   </header>
 );
 

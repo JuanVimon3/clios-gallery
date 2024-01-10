@@ -1,20 +1,48 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, ScrollRestoration } from 'react-router-dom';
 
-import Header from './components/Header';
 import Home from './containers/Home';
+import About from './containers/About';
 import ArtWorkDetail, { loader as artWorkLoader } from './containers/ArtWorkDetail';
-import Footer from './components/Footer';
+import NotFound from './containers/NotFound';
+import Layout from './components/Layout';
 
 const router = createBrowserRouter(
   [
     {
       path: '/',
-      element: <Home />,
+      element: (
+        <Layout>
+          <Home />
+        </Layout>
+      ),
     },
     {
       path: '/art-works/:artWorkId',
-      element: <ArtWorkDetail />,
+      element: (
+        <Layout>
+          <div>
+            <ScrollRestoration />
+            <ArtWorkDetail />
+          </div>
+        </Layout>
+      ),
       loader: artWorkLoader,
+    },
+    {
+      path: '/about/',
+      element: (
+        <Layout>
+          <About />
+        </Layout>
+      ),
+    },
+    {
+      path: '*',
+      element: (
+        <Layout>
+          <NotFound />
+        </Layout>
+      ),
     },
   ],
   {
@@ -22,12 +50,6 @@ const router = createBrowserRouter(
   },
 );
 
-const App = () => (
-  <div>
-    <Header />
-    <RouterProvider router={router} />
-    <Footer />
-  </div>
-);
+const App = () => <RouterProvider router={router} />;
 
 export default App;

@@ -14,7 +14,7 @@ const Home = () => {
   const [sourceFromDate, setSourceFromDate] = useState('');
   const [sourceToDate, setSourceToDate] = useState('');
 
-  const filteredData = data.filter(({ title, artistTitle, artistDisplay, artworkTypeTitle }) => {
+  const filteredData = data.filter(({ title, artistTitle, artistDisplay, artworkTypeTitle, sourceUpdatedAt }) => {
     if (titleText && !title.toLowerCase().includes(titleText.toLowerCase())) {
       return false;
     }
@@ -25,13 +25,16 @@ const Home = () => {
     if (artworkTypeText && artworkTypeText !== artworkTypeTitle) {
       return false;
     }
-    // if (sourceFromDate && sourceFromDate > sourceUpdatedAt) {
-    //   return false;
-    // }
-    // if (sourceToDate && sourceToDate < sourceUpdatedAt) {
-    //   return false;
-    // }
-
+    if (sourceFromDate && new Date(sourceFromDate) > new Date(sourceUpdatedAt)) {
+      return false;
+    }
+    if (sourceToDate) {
+      const endDate = new Date(sourceToDate);
+      endDate.setHours(23, 59, 59, 999);
+      if (new Date(sourceUpdatedAt) > endDate) {
+        return false;
+      }
+    }
     return true;
   });
 
@@ -127,11 +130,12 @@ const Home = () => {
           }) => (
             <ArtWorkCard
               key={id}
+              id={id}
               title={title}
               imageId={imageId}
               artistTitle={artistTitle}
-              artistDisplay={artistDisplay}
               artworkTypeTitle={artworkTypeTitle}
+              artistDisplay={artistDisplay}
               publicationHistory={publicationHistory}
               exhibitionHistory={exhibitionHistory}
               provenanceText={provenanceText}
