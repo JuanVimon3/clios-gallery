@@ -1,0 +1,10 @@
+.cardsContainer {
+  display: flex !important;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.cardsContainer a {
+  text-decoration: none;
+}
