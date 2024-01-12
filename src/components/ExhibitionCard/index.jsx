@@ -8,7 +8,7 @@ const ExhibitionCard = ({
   title,
   isFeatured,
   shortDescription,
-  imageUrl,
+  imageId,
   status,
   galleryTitle,
   artWorksTitle,
@@ -20,8 +20,8 @@ const ExhibitionCard = ({
       <h5>{isFeatured}</h5>
       <h5>{shortDescription}</h5>
       <img
-        className={styles.imageUrl}
-        src={`https://www.artic.edu/iiif/2/${imageUrl}}/full/300,/0/default.jpg`}
+        className={styles.imageId}
+        src={`https://www.artic.edu/iiif/2/${imageId}}/full/300,/0/default.jpg`}
         alt={title}
       />
       <h5>{status}</h5>
@@ -37,7 +37,7 @@ ExhibitionCard.propTypes = {
   title: PropTypes.string,
   isFeatured: PropTypes.bool,
   shortDescription: PropTypes.string,
-  imageUrl: PropTypes.string,
+  imageId: PropTypes.string,
   status: PropTypes.string,
   galleryTitle: PropTypes.number,
   artWorksTitle: PropTypes.string,
@@ -48,7 +48,7 @@ ExhibitionCard.defaultProps = {
   title: null,
   isFeatured: null,
   shortDescription: null,
-  imageUrl: null,
+  imageId: null,
   status: null,
   galleryTitle: null,
   artWorksTitle: null,
