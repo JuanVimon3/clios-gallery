@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title {
+  color: #004E63;
+}
+
+.imageUrl {
+  position: relative;
+}
