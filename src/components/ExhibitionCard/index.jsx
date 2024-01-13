@@ -16,18 +16,14 @@ const ExhibitionCard = ({
 }) => (
   <div className={styles.container}>
     <Link to="/exhibitions/:exhibitionsId" key={id}>
-      <h5 className={styles.title}>{title}</h5>
-      <h5>{isFeatured}</h5>
-      <h5>{shortDescription}</h5>
-      <img
-        className={styles.imageId}
-        src={`https://www.artic.edu/iiif/2/${imageId}}/full/300,/0/default.jpg`}
-        alt={title}
-      />
-      <h5>{status}</h5>
-      <h5>{galleryTitle}</h5>
-      <h5>{artWorksTitle}</h5>
-      <h5>{sourceUpdatedAt}</h5>
+      <h5 className={styles.title}>Title: {title}</h5>
+      <h5>Fetured: {isFeatured}</h5>
+      <h5>Description: {shortDescription}</h5>
+      <img className={styles.imageId} src={`https://api.artic.edu/api/v1/exhibitions/${imageId}`} alt={title} />
+      <h5>Status: {status}</h5>
+      <h5>Gallery: {galleryTitle}</h5>
+      <h5>Art Work: {artWorksTitle}</h5>
+      <h5>Last update: {sourceUpdatedAt}</h5>
     </Link>
   </div>
 );

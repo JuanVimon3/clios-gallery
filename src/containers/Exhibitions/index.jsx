@@ -2,7 +2,19 @@ import ExhibitionCard from '../../components/ExhibitionCard';
 
 import styles from './styles.module.css';
 
-const exhibitionsData = () => {}; // Acá se consume la API entonces?
+const exhibitionsData = [
+  {
+    id: 1,
+    title: 'Monalisa',
+    isFeatured: true,
+    shortDescription: 'briefly description',
+    imageId: '4r567i',
+    status: 'recent ...',
+    galleryTitle: 'Boston Gallery',
+    artWorksTitle: 'spanish painting',
+    sourceUpdatedAt: '2023-06-09',
+  },
+]; // Acá se consume la API entonces?
 
 const Exhibitions = () => (
   <div>
