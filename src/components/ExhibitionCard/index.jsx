@@ -3,51 +3,48 @@ import { Link } from 'react-router-dom';
 
 import styles from './styles.module.css';
 
-const ExhibitionCard = ({
-  id,
-  title,
-  isFeatured,
-  shortDescription,
-  imageId,
-  status,
-  galleryTitle,
-  artWorksTitle,
-  sourceUpdatedAt,
-}) => (
-  <div className={styles.container}>
-    <Link to="/exhibitions/:exhibitionsId" key={id}>
-      <h5 className={styles.title}>Title: {title}</h5>
-      <h5>Fetured: {isFeatured}</h5>
-      <h5>Description: {shortDescription}</h5>
-      <img className={styles.imageId} src={`https://api.artic.edu/api/v1/exhibitions/${imageId}`} alt={title} />
-      <h5>Status: {status}</h5>
-      <h5>Gallery: {galleryTitle}</h5>
-      <h5>Art Work: {artWorksTitle}</h5>
-      <h5>Last update: {sourceUpdatedAt}</h5>
-    </Link>
-  </div>
-);
+const ExhibitionCard = ({ id, title, shortDescription, imageId, imageUrl, status, galleryTitle, startAt, endAt }) => {
+  let imageSrc = `${process.env.PUBLIC_URL}/noImage.jpg`;
+  if (imageUrl) {
+    imageSrc = imageUrl;
+  } else if (imageId) {
+    imageSrc = `https://www.artic.edu/iiif/2/${imageId}/full/300,/0/default.jpg`;
+  }
+
+  return (
+    <div className={styles.container}>
+      <Link to="/exhibitions/:exhibitionsId" key={id}>
+        <h5 className={styles.title}>Title: {title}</h5>
+        <h5>Description: {shortDescription}</h5>
+        <img className={styles.imageId} src={imageSrc} alt={title} style={{ width: '300px', height: '200px' }} />
+        <h5>Status: {status}</h5>
+        <h5>Gallery: {galleryTitle}</h5>
+        <h5>Start at: {startAt}</h5>
+        <h5>End at: {endAt}</h5>
+      </Link>
+    </div>
+  );
+};
 
 ExhibitionCard.propTypes = {
   id: PropTypes.number.isRequired,
-  title: PropTypes.string,
-  isFeatured: PropTypes.bool,
-  shortDescription: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  shortDescription: PropTypes.string.isRequired,
   imageId: PropTypes.string,
+  imageUrl: PropTypes.string,
   status: PropTypes.string,
-  galleryTitle: PropTypes.number,
-  artWorksTitle: PropTypes.string,
-  sourceUpdatedAt: PropTypes.string.isRequired,
+  galleryTitle: PropTypes.string,
+  startAt: PropTypes.string,
+  endAt: PropTypes.string,
 };
 
 ExhibitionCard.defaultProps = {
-  title: null,
-  isFeatured: null,
-  shortDescription: null,
   imageId: null,
+  imageUrl: null,
   status: null,
   galleryTitle: null,
-  artWorksTitle: null,
+  startAt: null,
+  endAt: null,
 };
 
 export default ExhibitionCard;
