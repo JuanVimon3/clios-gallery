@@ -46,14 +46,6 @@ const router = createBrowserRouter(
       ),
     },
     {
-      path: '/exhibitions/:exhibitionsId',
-      element: (
-        <Layout>
-          <Exhibitions />
-        </Layout>
-      ),
-    },
-    {
       path: '*',
       element: (
         <Layout>
