@@ -15,12 +15,12 @@ const ExhibitionCard = ({ id, title, shortDescription, imageId, imageUrl, status
     <div className={styles.container}>
       <Link to="/exhibitions/:exhibitionsId" key={id}>
         <h5 className={styles.title}>Title: {title}</h5>
-        <h5>Description: {shortDescription}</h5>
+        <h5 className={styles.description}>Description: {shortDescription}</h5>
         <img className={styles.imageId} src={imageSrc} alt={title} style={{ width: '300px', height: '200px' }} />
         <h5>Status: {status}</h5>
         <h5>Gallery: {galleryTitle}</h5>
-        <h5>Start at: {startAt}</h5>
-        <h5>End at: {endAt}</h5>
+        <h5>Start at: {new Date(startAt).toLocaleDateString()}</h5>
+        <h5>End at: {new Date(endAt).toLocaleDateString()}</h5>
       </Link>
     </div>
   );
