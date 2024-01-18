@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 import styles from './styles.module.css';
 
-const ExhibitionCard = ({ id, title, shortDescription, imageId, imageUrl, status, galleryTitle, startAt, endAt }) => {
+const ExhibitionCard = ({ title, shortDescription, imageId, imageUrl, status, galleryTitle, startAt, endAt }) => {
   let imageSrc = `${process.env.PUBLIC_URL}/noImage.jpg`;
   if (imageUrl) {
     imageSrc = imageUrl;
@@ -13,21 +12,18 @@ const ExhibitionCard = ({ id, title, shortDescription, imageId, imageUrl, status
 
   return (
     <div className={styles.container}>
-      <Link to="/exhibitions/:exhibitionsId" key={id}>
-        <h5 className={styles.title}>Title: {title}</h5>
-        <h5 className={styles.description}>Description: {shortDescription}</h5>
-        <img className={styles.imageId} src={imageSrc} alt={title} style={{ width: '300px', height: '200px' }} />
-        <h5>Status: {status}</h5>
-        <h5>Gallery: {galleryTitle}</h5>
-        <h5>Start at: {new Date(startAt).toLocaleDateString()}</h5>
-        <h5>End at: {new Date(endAt).toLocaleDateString()}</h5>
-      </Link>
+      <h5 className={styles.title}>Title: {title}</h5>
+      <h5 className={styles.description}>Description: {shortDescription}</h5>
+      <img className={styles.imageId} src={imageSrc} alt={title} />
+      <h5>Status: {status}</h5>
+      <h5>Gallery: {galleryTitle}</h5>
+      <h5>Start at: {new Date(startAt).toLocaleDateString()}</h5>
+      <h5>End at: {new Date(endAt).toLocaleDateString()}</h5>
     </div>
   );
 };
 
 ExhibitionCard.propTypes = {
-  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   shortDescription: PropTypes.string.isRequired,
   imageId: PropTypes.string,
