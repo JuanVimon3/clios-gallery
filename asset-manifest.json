@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/clios-gallery/static/css/main.2f965edb.css",
-    "main.js": "/clios-gallery/static/js/main.768a09ff.js",
+    "main.css": "/clios-gallery/static/css/main.aa1dfaee.css",
+    "main.js": "/clios-gallery/static/js/main.3ac34667.js",
     "static/js/787.3fd39742.chunk.js": "/clios-gallery/static/js/787.3fd39742.chunk.js",
     "index.html": "/clios-gallery/index.html",
-    "main.2f965edb.css.map": "/clios-gallery/static/css/main.2f965edb.css.map",
-    "main.768a09ff.js.map": "/clios-gallery/static/js/main.768a09ff.js.map",
+    "main.aa1dfaee.css.map": "/clios-gallery/static/css/main.aa1dfaee.css.map",
+    "main.3ac34667.js.map": "/clios-gallery/static/js/main.3ac34667.js.map",
     "787.3fd39742.chunk.js.map": "/clios-gallery/static/js/787.3fd39742.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2f965edb.css",
-    "static/js/main.768a09ff.js"
+    "static/css/main.aa1dfaee.css",
+    "static/js/main.3ac34667.js"
   ]
 }
