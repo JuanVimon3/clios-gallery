@@ -5,6 +5,7 @@ import About from './containers/About';
 import ArtWorkDetail, { loader as artWorkLoader } from './containers/ArtWorkDetail';
 import NotFound from './containers/NotFound';
 import Layout from './components/Layout';
+import Exhibitions from './containers/Exhibitions';
 
 const router = createBrowserRouter(
   [
@@ -33,6 +34,14 @@ const router = createBrowserRouter(
       element: (
         <Layout>
           <About />
+        </Layout>
+      ),
+    },
+    {
+      path: '/exhibitions',
+      element: (
+        <Layout>
+          <Exhibitions />
         </Layout>
       ),
     },
