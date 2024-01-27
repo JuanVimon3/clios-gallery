@@ -6,6 +6,7 @@ import ArtWorkDetail, { loader as artWorkLoader } from './containers/ArtWorkDeta
 import NotFound from './containers/NotFound';
 import Layout from './components/Layout';
 import Exhibitions from './containers/Exhibitions';
+import ExhibitionDetail from './containers/ExhibitionDetail';
 
 const router = createBrowserRouter(
   [
@@ -42,6 +43,17 @@ const router = createBrowserRouter(
       element: (
         <Layout>
           <Exhibitions />
+        </Layout>
+      ),
+    },
+    {
+      path: '/exhibitions/:exhibitionId',
+      element: (
+        <Layout>
+          <div>
+            <ExhibitionDetail />
+            <ScrollRestoration />
+          </div>
         </Layout>
       ),
     },
