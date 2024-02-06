@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 
 import Pagination from '@mui/material/Pagination';
 import Box from '@mui/material/Box';
-import ExhibitionCard from '../../components/ExhibitionCard';
 
+import ExhibitionCard from '../../components/ExhibitionCard';
 import axiosInstance from '../../axiosInstance';
 
 import styles from './styles.module.css';
