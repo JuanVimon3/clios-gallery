@@ -1,18 +1,20 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 
+import Pagination from '@mui/material/Pagination';
+import Box from '@mui/material/Box';
 import ExhibitionCard from '../../components/ExhibitionCard';
+import axiosInstance from '../../axiosInstance';
 
 import styles from './styles.module.css';
 
-const axiosInstance = axios.create({ baseURL: 'https://api.artic.edu/api/v1' });
-
 const Exhibitions = () => {
   const [data, setData] = useState([]);
+  const [totalPages, setTotalPages] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const getExhibitions = async () => {
-      const response = await axiosInstance.get('/exhibitions', { params: { limit: 30 } });
+      const response = await axiosInstance.get('/exhibitions', { params: { limit: 9, page: currentPage } });
       setData(
         response.data.data.map(
           ({
@@ -38,9 +40,14 @@ const Exhibitions = () => {
           }),
         ),
       );
+      setTotalPages(response.data.pagination.total_pages);
     };
     getExhibitions();
-  }, []);
+  }, [currentPage]);
+
+  const handleChangePage = (event, page) => {
+    setCurrentPage(page);
+  };
 
   return (
     <div>
@@ -60,6 +67,9 @@ const Exhibitions = () => {
           />
         ))}
       </div>
+      <Box display="flex" justifyContent="center" paddingY={3}>
+        <Pagination count={totalPages} color="primary" onChange={handleChangePage} />
+      </Box>
     </div>
   );
 };

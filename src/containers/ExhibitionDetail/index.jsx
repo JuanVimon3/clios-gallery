@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import axiosInstance from '../../axiosInstance';
 
 import styles from './styles.module.css';
-
-const axiosInstance = axios.create({ baseURL: 'https://api.artic.edu/api/v1' });
 
 const ExhibitionDetail = () => {
   const [exhibition, setExhibition] = useState({});
@@ -40,12 +38,16 @@ const ExhibitionDetail = () => {
       <h1 className={styles.title}>{exhibition.title}</h1>
       <img className={styles.image} src={imageSrc} alt={exhibition.title} />
       <div className={styles.text}>
-        <h2>Status: {exhibition.status}</h2>
-        <h2>Description: {exhibition.shortDescription}</h2>
-        <h2>Gallery: {exhibition.galleryTitle}</h2>
-        <h2>Art Works: {exhibition.artWorks}</h2>
-        <h3>Start At: {exhibition.startAt}</h3>
-        <h3>End At: {exhibition.endAt}</h3>
+        <h2>
+          <div>Status: {exhibition.status}</div>
+          <div>Description: {exhibition.shortDescription}</div>
+          <div>Gallery: {exhibition.galleryTitle}</div>
+          <div>Art Works: {exhibition.artWorks}</div>
+        </h2>
+        <h3>
+          <div>Start At: {exhibition.startAt}</div>
+          <div>End At: {exhibition.endAt}</div>
+        </h3>
       </div>
     </div>
   );
