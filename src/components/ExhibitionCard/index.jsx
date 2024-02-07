@@ -13,7 +13,7 @@ const ExhibitionCard = ({ id, title, shortDescription, imageId, imageUrl, status
 
   return (
     <div className={styles.container}>
-      <Link to={`/exhibitions/${id}`} key={id}>
+      <Link to={`/exhibitions/${id}`}>
         <h5 className={styles.title}>Title: {title}</h5>
         <h5 className={styles.description}>{shortDescription}</h5>
         <img className={styles.imageId} src={imageSrc} alt={title} />
