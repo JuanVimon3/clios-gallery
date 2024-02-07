@@ -1,0 +1,26 @@
+.title {
+  margin-top: 20px;
+  margin-left: 40px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  padding: 20px;
+  color: #004E63;
+  font-weight: bold;
+}
+
+.image {
+  height: auto;
+  width: auto;
+  max-height: 500px;
+  max-width: 800px;
+  display: block;
+  margin: 30px auto;
+}
+
+.text {
+  max-width: 100%;
+  margin-bottom: 40px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
