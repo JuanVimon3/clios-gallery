@@ -1,11 +1,10 @@
-import Menu from '../Menu';
+import MenuComponent from '../Menu';
 
 import styles from './styles.module.css';
 
 const Header = () => (
   <header className={styles.container}>
-    <Menu />
-    <h3>{`Clio's Gallery`}</h3>
+    <MenuComponent />
   </header>
 );
 
