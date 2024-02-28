@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import classNames from 'classnames';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
@@ -11,7 +12,19 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 
-const pages = [<Link to="/">Home</Link>, <Link to="/exhibitions/">Exhibitions</Link>, <Link to="/about/">About</Link>];
+import styles from './styles.module.css';
+
+const pages = [
+  <NavLink to="/" className={({ isActive }) => classNames(styles.link, { [styles.activeLink]: isActive })}>
+    Home
+  </NavLink>,
+  <NavLink to="/exhibitions/" className={({ isActive }) => classNames(styles.link, { [styles.activeLink]: isActive })}>
+    Exhibitions
+  </NavLink>,
+  <NavLink to="/about/" className={({ isActive }) => classNames(styles.link, { [styles.activeLink]: isActive })}>
+    About
+  </NavLink>,
+];
 
 const MenuComponent = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
