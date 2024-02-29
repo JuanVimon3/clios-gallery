@@ -1,11 +1,22 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Pagination from '@mui/material/Pagination';
 import Box from '@mui/material/Box';
+import { Skeleton } from '@mui/material';
 
 import ExhibitionCard from '../../components/ExhibitionCard';
 import axiosInstance from '../../axiosInstance';
 
 import styles from './styles.module.css';
+
+const charging = (props) => {
+  const { loading = false } = props;
+  return loading ? <Skeleton height={200} width={80} animation="wave" variant="rectangular" /> : null;
+};
+
+charging.propTypes = {
+  loading: PropTypes.bool,
+};
 
 const Exhibitions = () => {
   const [data, setData] = useState([]);
@@ -51,7 +62,7 @@ const Exhibitions = () => {
 
   return (
     <div>
-      <div className={styles.cardsContainer}>
+      <div className={styles.cardsContainer} loading>
         {data.map(({ id, title, shortDescription, imageId, imageUrl, status, galleryTitle, startAt, endAt }) => (
           <ExhibitionCard
             key={id}
