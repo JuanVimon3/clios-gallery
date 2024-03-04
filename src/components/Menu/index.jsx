@@ -41,18 +41,14 @@ const MenuComponent = () => {
     <AppBar position="static">
       <Container maxWidth="x1">
         <Toolbar disableGutters>
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, nav: { textDecoration: 'none' } }}>
+          <Box className={styles.buttonBar}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'none' }}
-              >
+              <Button key={page} onClick={handleCloseNavMenu}>
                 {page}
               </Button>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box className={styles.iconButton}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -78,9 +74,7 @@ const MenuComponent = () => {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
+              className={styles.menuBar}
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
@@ -89,19 +83,8 @@ const MenuComponent = () => {
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            sx={{
-              flexGrow: 0.7,
-              textAlign: 'center',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            Clio`s Gallery
+          <Typography variant="h6" noWrap className={styles.typography}>
+            Clio&apos;s Gallery
           </Typography>
         </Toolbar>
       </Container>
