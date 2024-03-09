@@ -1,7 +1,8 @@
 .container {
-  flex-Grow: 1; 
-};
+  flex-grow: 1; 
+}
+
 .typography {
   text-align: center;
   width: 100%;
-};
+}

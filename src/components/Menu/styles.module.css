@@ -1,39 +1,47 @@
-.link{
+.link {
     text-decoration: none;
     padding: 17px;
     border-radius: 3px;
     color: #e7b829e3;
 }
-.activeLink{
+
+.activeLink {
     background-color: white;
     color: blue;
 }
-.buttonBar{
+
+.buttonBar {
     display: flex;
 }
+
 @media screen and (max-width: 600px) {
     .buttonBar{
         display: none;
     }
 }
-.iconButton{
+
+.iconButton {
     flex-grow: 1;
     display: none;
 }
+
 @media screen and (max-width: 600px) {
     .iconButton{
         display: flex;
     }
 }
-.menuBar{
+
+.menuBar {
     display: none;
 }
+
 @media screen and (max-width: 600px) {
     .menuBar{
         display: block;
     }
 }
-.typography{
+
+.typography {
     flex-Grow: 0.7;
     text-align: center;
     font-weight: 700;

@@ -14,14 +14,16 @@ import Toolbar from '@mui/material/Toolbar';
 
 import styles from './styles.module.css';
 
+const conditionalStyleLink = ({ isActive }) => classNames(styles.link, { [styles.activeLink]: isActive });
+
 const pages = [
-  <NavLink to="/" className={({ isActive }) => classNames(styles.link, { [styles.activeLink]: isActive })}>
+  <NavLink key="Home" to="/" className={conditionalStyleLink}>
     Home
   </NavLink>,
-  <NavLink to="/exhibitions/" className={({ isActive }) => classNames(styles.link, { [styles.activeLink]: isActive })}>
+  <NavLink key="Exhibitions" to="/exhibitions/" className={conditionalStyleLink}>
     Exhibitions
   </NavLink>,
-  <NavLink to="/about/" className={({ isActive }) => classNames(styles.link, { [styles.activeLink]: isActive })}>
+  <NavLink key="About" to="/about/" className={conditionalStyleLink}>
     About
   </NavLink>,
 ];
@@ -43,7 +45,7 @@ const MenuComponent = () => {
         <Toolbar disableGutters>
           <Box className={styles.buttonBar}>
             {pages.map((page) => (
-              <Button key={page} onClick={handleCloseNavMenu}>
+              <Button key={page.key} onClick={handleCloseNavMenu}>
                 {page}
               </Button>
             ))}
@@ -77,7 +79,7 @@ const MenuComponent = () => {
               className={styles.menuBar}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page.key} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
