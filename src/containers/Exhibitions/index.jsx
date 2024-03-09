@@ -57,7 +57,7 @@ const Exhibitions = () => {
     <div>
       <div className={styles.cardsContainer} loading>
         {loading ? (
-          <Skeleton animation="wave" width={300} height={480}>
+          <Skeleton animation="wave">
             <ExhibitionCard />
           </Skeleton>
         ) : (
