@@ -68,7 +68,6 @@ const MenuComponent = () => {
                 vertical: 'bottom',
                 horizontal: 'left',
               }}
-              autoFocus={Boolean}
               keepMounted
               transformOrigin={{
                 vertical: 'top',

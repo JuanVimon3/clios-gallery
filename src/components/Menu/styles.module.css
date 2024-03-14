@@ -1,51 +1,51 @@
 .link {
-    text-decoration: none;
-    padding: 17px;
-    border-radius: 3px;
-    color: #e7b829e3;
+  text-decoration: none;
+  padding: 17px;
+  border-radius: 3px;
+  color: #e7b829e3;
 }
 
 .activeLink {
-    background-color: white;
-    color: blue;
+  background-color: white;
+  color: blue;
 }
 
 .buttonBar {
-    display: flex;
+  display: flex;
 }
 
 @media screen and (max-width: 600px) {
-    .buttonBar{
-        display: none;
-    }
+  .buttonBar {
+    display: none;
+  }
 }
 
 .iconButton {
-    flex-grow: 1;
-    display: none;
+  flex-grow: 1;
+  display: none;
 }
 
 @media screen and (max-width: 600px) {
-    .iconButton{
-        display: flex;
-    }
+  .iconButton {
+    display: flex;
+  }
 }
 
 .menuBar {
-    display: none;
+  display: none;
 }
 
 @media screen and (max-width: 600px) {
-    .menuBar{
-        display: block;
-    }
+  .menuBar {
+    display: block;
+  }
 }
 
 .typography {
-    flex-Grow: 0.7;
-    text-align: center;
-    font-weight: 700;
-    letter-spacing: .3rem;
-    color: inherit;
-    text-decoration: none;
+  flex-Grow: 0.7;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: .3rem;
+  color: inherit;
+  text-decoration: none;
 }
