@@ -12,6 +12,7 @@
 
 .buttonBar {
   display: flex;
+  z-index: 1;
 }
 
 @media screen and (max-width: 600px) {
@@ -23,6 +24,7 @@
 .iconButton {
   flex-grow: 1;
   display: none;
+  z-index: 1;
 }
 
 @media screen and (max-width: 600px) {
@@ -41,11 +43,14 @@
   }
 }
 
-.typography {
+.title {
   flex-Grow: 0.7;
   text-align: center;
   font-weight: 700;
   letter-spacing: .3rem;
   color: inherit;
   text-decoration: none;
+  position: absolute;
+  left: 0;
+  right: 0;
 }

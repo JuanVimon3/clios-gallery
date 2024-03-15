@@ -84,7 +84,7 @@ const MenuComponent = () => {
               ))}
             </Menu>
           </Box>
-          <Typography variant="h6" noWrap className={styles.typography}>
+          <Typography variant="h6" noWrap className={styles.title}>
             {`Clio's Gallery`}
           </Typography>
         </Toolbar>
