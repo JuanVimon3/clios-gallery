@@ -22,8 +22,10 @@ const router = createBrowserRouter(
       path: '/art-works/:artWorkId',
       element: (
         <Layout>
-          <ScrollRestoration />
-          <ArtWorkDetail />
+          <>
+            <ScrollRestoration />
+            <ArtWorkDetail />
+          </>
         </Layout>
       ),
       loader: artWorkLoader,
@@ -48,8 +50,10 @@ const router = createBrowserRouter(
       path: '/exhibitions/:exhibitionId',
       element: (
         <Layout>
-          <ExhibitionDetail />
-          <ScrollRestoration />
+          <>
+            <ExhibitionDetail />
+            <ScrollRestoration />
+          </>
         </Layout>
       ),
     },
