@@ -8,3 +8,9 @@
 .cardsContainer a {
   text-decoration: none;
 }
+
+.skeleton {
+  margin: 20px;
+  height: 480px;
+  width: 300px;
+}
