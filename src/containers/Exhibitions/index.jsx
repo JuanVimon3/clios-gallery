@@ -16,8 +16,8 @@ const Exhibitions = () => {
 
   useEffect(() => {
     const getExhibitions = async () => {
-      const response = await axiosInstance.get('/exhibitions', { params: { limit: 9, page: currentPage } });
       setLoading(true);
+      const response = await axiosInstance.get('/exhibitions', { params: { limit: 9, page: currentPage } });
       setData(
         response.data.data.map(
           ({
@@ -53,29 +53,31 @@ const Exhibitions = () => {
     setCurrentPage(page);
   };
 
+  const arraySkeleton = Array.from({ length: 9 });
+
   return (
     <div>
       <div className={styles.cardsContainer} loading>
-        {loading ? (
-          <Skeleton animation="wave">
-            <ExhibitionCard />
-          </Skeleton>
-        ) : (
-          data.map(({ id, title, shortDescription, imageId, imageUrl, status, galleryTitle, startAt, endAt }) => (
-            <ExhibitionCard
-              key={id}
-              id={id}
-              title={title}
-              shortDescription={shortDescription}
-              imageId={imageId}
-              imageUrl={imageUrl}
-              status={status}
-              galleryTitle={galleryTitle}
-              startAt={startAt}
-              endAt={endAt}
-            />
-          ))
-        )}
+        {loading
+          ? arraySkeleton.map((index) => (
+              <Skeleton key={index} animation="wave" variant="rectangle" className={styles.skeleton}>
+                <ExhibitionCard />
+              </Skeleton>
+            ))
+          : data.map(({ id, title, shortDescription, imageId, imageUrl, status, galleryTitle, startAt, endAt }) => (
+              <ExhibitionCard
+                key={id}
+                id={id}
+                title={title}
+                shortDescription={shortDescription}
+                imageId={imageId}
+                imageUrl={imageUrl}
+                status={status}
+                galleryTitle={galleryTitle}
+                startAt={startAt}
+                endAt={endAt}
+              />
+            ))}
       </div>
       <Box display="flex" justifyContent="center" paddingY={3}>
         <Pagination count={totalPages} color="primary" onChange={handleChangePage} />

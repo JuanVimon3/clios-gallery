@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import styles from './styles.module.css';
 
@@ -12,7 +13,7 @@ const Dropdown = ({ value, onChangeValue, labelText, placeholder, options }) => 
       id="dropdown"
       type="text"
       onChange={onChangeValue}
-      className={`${styles.dropdown} ${value === '' ? styles.placeholderActive : ''}`}
+      className={classNames(styles.dropdown, { [styles.placeholderActive]: value === '' })}
     >
       <option key="" value="" hidden>
         {placeholder}
