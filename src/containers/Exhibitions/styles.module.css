@@ -10,7 +10,8 @@
 }
 
 .skeleton {
-  margin: 20px;
   height: 480px;
   width: 300px;
+  margin: 20px 20px;
+  border-radius: 5px;
 }

@@ -59,7 +59,8 @@ const Exhibitions = () => {
     <div>
       <div className={styles.cardsContainer} loading>
         {loading
-          ? arraySkeleton.map((index) => (
+          ? arraySkeleton.map((_, index) => (
+              // eslint-disable-next-line react/no-array-index-key
               <Skeleton key={index} animation="wave" variant="rectangle" className={styles.skeleton}>
                 <ExhibitionCard />
               </Skeleton>
