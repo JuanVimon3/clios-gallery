@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Pagination from '@mui/material/Pagination';
 import Box from '@mui/material/Box';
-import { Skeleton } from '@mui/material';
+import Skeleton from '@mui/material';
 
 import ExhibitionCard from '../../components/ExhibitionCard';
 import axiosInstance from '../../axiosInstance';
@@ -53,15 +53,14 @@ const Exhibitions = () => {
     setCurrentPage(page);
   };
 
-  const arraySkeleton = Array.from({ length: 9 });
+  const arraySkeleton = Array.from({ length: 9 }, (v, k) => ({ id: k + 1 }));
 
   return (
     <div>
       <div className={styles.cardsContainer} loading>
         {loading
-          ? arraySkeleton.map((_, index) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <Skeleton key={index} animation="wave" variant="rectangle" className={styles.skeleton}>
+          ? arraySkeleton.map((e) => (
+              <Skeleton key={e.id} animation="wave" variant="rectangle" className={styles.skeleton}>
                 <ExhibitionCard />
               </Skeleton>
             ))
