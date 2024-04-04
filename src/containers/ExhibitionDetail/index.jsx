@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Skeleton } from '@mui/material';
 
 import axiosInstance from '../../axiosInstance';
 
@@ -8,8 +9,11 @@ import styles from './styles.module.css';
 const ExhibitionDetail = () => {
   const [exhibition, setExhibition] = useState({});
   const { exhibitionId } = useParams();
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const getExhibition = async () => {
+      setLoading(true);
       const response = await axiosInstance.get(`/exhibitions/${exhibitionId}`);
       setExhibition({
         id: response.data.data.id,
@@ -23,6 +27,7 @@ const ExhibitionDetail = () => {
         startAt: response.data.data.aic_start_at,
         endAt: response.data.data.aic_end_at,
       });
+      setLoading(false);
     };
     getExhibition();
   }, []);
@@ -36,20 +41,28 @@ const ExhibitionDetail = () => {
 
   return (
     <div>
-      <h1 className={styles.title}>{exhibition.title}</h1>
-      <img className={styles.image} src={imageSrc} alt={exhibition.title} />
-      <div className={styles.text}>
-        <h2>
-          <div>Status: {exhibition.status}</div>
-          <div>Description: {exhibition.shortDescription}</div>
-          <div>Gallery: {exhibition.galleryTitle}</div>
-          <div>Art Works: {exhibition.artWorks}</div>
-        </h2>
-        <h3>
-          <div>Start At: {exhibition.startAt}</div>
-          <div>End At: {exhibition.endAt}</div>
-        </h3>
-      </div>
+      {loading ? (
+        <Skeleton animation="wave" variant="rectangle">
+          <ExhibitionDetail />
+        </Skeleton>
+      ) : (
+        <>
+          <h1 className={styles.title}>{exhibition.title}</h1>
+          <img className={styles.image} src={imageSrc} alt={exhibition.title} />
+          <div className={styles.text}>
+            <h2>
+              <div>Status: {exhibition.status}</div>
+              <div>Description: {exhibition.shortDescription}</div>
+              <div>Gallery: {exhibition.galleryTitle}</div>
+              <div>Art Works: {exhibition.artWorks}</div>
+            </h2>
+            <h3>
+              <div>Start At: {exhibition.startAt}</div>
+              <div>End At: {exhibition.endAt}</div>
+            </h3>
+          </div>
+        </>
+      )}
     </div>
   );
 };
