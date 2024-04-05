@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Pagination from '@mui/material/Pagination';
 import Box from '@mui/material/Box';
+import Skeleton from '@mui/material';
 
 import ExhibitionCard from '../../components/ExhibitionCard';
 import axiosInstance from '../../axiosInstance';
@@ -11,9 +12,11 @@ const Exhibitions = () => {
   const [data, setData] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getExhibitions = async () => {
+      setLoading(true);
       const response = await axiosInstance.get('/exhibitions', { params: { limit: 9, page: currentPage } });
       setData(
         response.data.data.map(
@@ -41,6 +44,7 @@ const Exhibitions = () => {
         ),
       );
       setTotalPages(response.data.pagination.total_pages);
+      setLoading(false);
     };
     getExhibitions();
   }, [currentPage]);
@@ -49,23 +53,31 @@ const Exhibitions = () => {
     setCurrentPage(page);
   };
 
+  const arraySkeleton = Array.from({ length: 9 }, (v, k) => ({ id: k + 1 }));
+
   return (
     <div>
-      <div className={styles.cardsContainer}>
-        {data.map(({ id, title, shortDescription, imageId, imageUrl, status, galleryTitle, startAt, endAt }) => (
-          <ExhibitionCard
-            key={id}
-            id={id}
-            title={title}
-            shortDescription={shortDescription}
-            imageId={imageId}
-            imageUrl={imageUrl}
-            status={status}
-            galleryTitle={galleryTitle}
-            startAt={startAt}
-            endAt={endAt}
-          />
-        ))}
+      <div className={styles.cardsContainer} loading>
+        {loading
+          ? arraySkeleton.map((e) => (
+              <Skeleton key={e.id} animation="wave" variant="rectangle" className={styles.skeleton}>
+                <ExhibitionCard />
+              </Skeleton>
+            ))
+          : data.map(({ id, title, shortDescription, imageId, imageUrl, status, galleryTitle, startAt, endAt }) => (
+              <ExhibitionCard
+                key={id}
+                id={id}
+                title={title}
+                shortDescription={shortDescription}
+                imageId={imageId}
+                imageUrl={imageUrl}
+                status={status}
+                galleryTitle={galleryTitle}
+                startAt={startAt}
+                endAt={endAt}
+              />
+            ))}
       </div>
       <Box display="flex" justifyContent="center" paddingY={3}>
         <Pagination count={totalPages} color="primary" onChange={handleChangePage} />
