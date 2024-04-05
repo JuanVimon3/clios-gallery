@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Pagination from '@mui/material/Pagination';
 import Box from '@mui/material/Box';
-import Skeleton from '@mui/material';
+import Skeleton from '@mui/material/Skeleton';
 
 import ExhibitionCard from '../../components/ExhibitionCard';
 import axiosInstance from '../../axiosInstance';
