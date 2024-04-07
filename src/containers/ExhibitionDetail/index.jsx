@@ -42,7 +42,7 @@ const ExhibitionDetail = () => {
   return (
     <div>
       {loading ? (
-        <Skeleton animation="wave" variant="rectangle" />
+        <Skeleton animation="wave" variant="rectangle" className={styles.skeleton}/>
       ) : (
         <>
           <h1 className={styles.title}>{exhibition.title}</h1>
