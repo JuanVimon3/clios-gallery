@@ -5,6 +5,7 @@ import { Skeleton } from '@mui/material';
 import axiosInstance from '../../axiosInstance';
 
 import styles from './styles.module.css';
+import ExhibitionCard from '../../components/ExhibitionCard';
 
 const ExhibitionDetail = () => {
   const [exhibition, setExhibition] = useState({});
@@ -42,7 +43,9 @@ const ExhibitionDetail = () => {
   return (
     <div>
       {loading ? (
-        <Skeleton animation="wave" variant="rectangle" className={styles.skeleton} />
+        <Skeleton animation="wave" variant="rectangular" className={styles.skeleton}>
+          <ExhibitionCard />
+        </Skeleton>
       ) : (
         <>
           <h1 className={styles.title}>{exhibition.title}</h1>
