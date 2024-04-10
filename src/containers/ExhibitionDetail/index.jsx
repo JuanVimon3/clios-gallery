@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Skeleton } from '@mui/material';
+import Skeleton from '@mui/material/Skeleton';
+import Box from '@mui/material/Box';
 
 import axiosInstance from '../../axiosInstance';
 
 import styles from './styles.module.css';
-import ExhibitionCard from '../../components/ExhibitionCard';
 
 const ExhibitionDetail = () => {
   const [exhibition, setExhibition] = useState({});
@@ -43,9 +43,12 @@ const ExhibitionDetail = () => {
   return (
     <div>
       {loading ? (
-        <Skeleton animation="wave" variant="rectangular" className={styles.skeleton}>
-          <ExhibitionCard />
-        </Skeleton>
+        <Box padding={4}>
+          <Skeleton animation="wave" variant="rectangular" height="500px" />
+          <Skeleton animation="wave" variant="text" height="50px" />
+          <Skeleton animation="wave" variant="text" height="50px" />
+          <Skeleton animation="wave" variant="text" height="50px" />
+        </Box>
       ) : (
         <>
           <h1 className={styles.title}>{exhibition.title}</h1>
