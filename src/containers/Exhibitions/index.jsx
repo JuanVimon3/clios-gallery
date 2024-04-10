@@ -60,9 +60,9 @@ const Exhibitions = () => {
       <div className={styles.cardsContainer} loading>
         {loading
           ? arraySkeleton.map((e) => (
-              <Skeleton key={e.id} animation="wave" variant="rectangle" className={styles.skeleton}>
-                <ExhibitionCard />
-              </Skeleton>
+              <Box margin="20px">
+                <Skeleton key={e.id} animation="wave" variant="rectangle" width="300px" height="480px" />
+              </Box>
             ))
           : data.map(({ id, title, shortDescription, imageId, imageUrl, status, galleryTitle, startAt, endAt }) => (
               <ExhibitionCard
