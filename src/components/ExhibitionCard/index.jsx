@@ -29,7 +29,7 @@ const ExhibitionCard = ({ id, title, shortDescription, imageId, imageUrl, status
 ExhibitionCard.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  shortDescription: PropTypes.string.isRequired,
+  shortDescription: PropTypes.string,
   imageId: PropTypes.string,
   imageUrl: PropTypes.string,
   status: PropTypes.string,
@@ -39,6 +39,7 @@ ExhibitionCard.propTypes = {
 };
 
 ExhibitionCard.defaultProps = {
+  shortDescription: null,
   imageId: null,
   imageUrl: null,
   status: null,

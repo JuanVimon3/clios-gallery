@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import Skeleton from '@mui/material/Skeleton';
+import Box from '@mui/material/Box';
 
 import axiosInstance from '../../axiosInstance';
 
@@ -8,8 +10,11 @@ import styles from './styles.module.css';
 const ExhibitionDetail = () => {
   const [exhibition, setExhibition] = useState({});
   const { exhibitionId } = useParams();
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const getExhibition = async () => {
+      setLoading(true);
       const response = await axiosInstance.get(`/exhibitions/${exhibitionId}`);
       setExhibition({
         id: response.data.data.id,
@@ -23,6 +28,7 @@ const ExhibitionDetail = () => {
         startAt: response.data.data.aic_start_at,
         endAt: response.data.data.aic_end_at,
       });
+      setLoading(false);
     };
     getExhibition();
   }, []);
@@ -36,20 +42,31 @@ const ExhibitionDetail = () => {
 
   return (
     <div>
-      <h1 className={styles.title}>{exhibition.title}</h1>
-      <img className={styles.image} src={imageSrc} alt={exhibition.title} />
-      <div className={styles.text}>
-        <h2>
-          <div>Status: {exhibition.status}</div>
-          <div>Description: {exhibition.shortDescription}</div>
-          <div>Gallery: {exhibition.galleryTitle}</div>
-          <div>Art Works: {exhibition.artWorks}</div>
-        </h2>
-        <h3>
-          <div>Start At: {exhibition.startAt}</div>
-          <div>End At: {exhibition.endAt}</div>
-        </h3>
-      </div>
+      {loading ? (
+        <Box padding={4}>
+          <Skeleton animation="wave" variant="rectangular" height="500px" />
+          <Skeleton animation="wave" variant="text" height="50px" />
+          <Skeleton animation="wave" variant="text" height="50px" />
+          <Skeleton animation="wave" variant="text" height="50px" />
+        </Box>
+      ) : (
+        <>
+          <h1 className={styles.title}>{exhibition.title}</h1>
+          <img className={styles.image} src={imageSrc} alt={exhibition.title} />
+          <div className={styles.text}>
+            <h2>
+              <div>Status: {exhibition.status}</div>
+              <div>Description: {exhibition.shortDescription}</div>
+              <div>Gallery: {exhibition.galleryTitle}</div>
+              <div>Art Works: {exhibition.artWorks}</div>
+            </h2>
+            <h3>
+              <div>Start At: {exhibition.startAt}</div>
+              <div>End At: {exhibition.endAt}</div>
+            </h3>
+          </div>
+        </>
+      )}
     </div>
   );
 };
