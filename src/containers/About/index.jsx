@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 const About = () => (
   <div className={styles.container}>
     <img className={styles.profileImage} src={`${process.env.PUBLIC_URL}/Profile_image.jpeg`} alt="profile" />
-    <h1 className={styles.title}> !Hello! </h1>
+    <h1 className={styles.title}> ¡Hello! </h1>
     <h2 className={styles.text}>
       My name is Juan, and Im a dedicated and enthusiastic Developer Trainee with a passion for technology and a strong
       foundation in web development. I am eager to contribute my skills to a project and learn continuously in a dynamic

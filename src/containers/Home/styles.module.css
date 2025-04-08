@@ -1,16 +1,16 @@
 .filtersContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   margin-top: 15px;
   margin-bottom: 20px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 20px;
+  gap: 16px;
 }
 
 .filtersContainer > div {
-  display: inline-block;
-  min-width: 360px;
+  min-width: 300px;
+  flex: 1 1 300px;
 }
 
 .cardsContainer {
@@ -18,8 +18,58 @@
   flex-wrap: wrap;
   width: 100%;
   justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }
 
 .cardsContainer a {
   text-decoration: none;
+}
+
+/* MEDIA QUERIES */
+
+
+@media screen and (max-width: 1024px) {
+  .filtersContainer {
+    padding: 16px;
+    gap: 12px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .filtersContainer {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px;
+  }
+
+  .filtersContainer > div {
+    min-width: unset;   
+    width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .cardsContainer {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .filtersContainer {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .filtersContainer > div {
+    min-width: 100%;
+  }
+
+  .cardsContainer {
+    padding: 10px;
+    gap: 16px;
+  }
 }
